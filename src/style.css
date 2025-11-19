@@ -1,0 +1,86 @@
+/* Alap */
+:root {
+    --dark: #000000;
+    --light: #ffffff;
+    --blue: #0000ff;
+    --gray: #303030;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: monospace;
+    padding: 20px;
+}
+
+/* Console */
+
+.login-attempts-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: start;
+}
+
+/* Vonal */
+hr {
+    width: 80%;
+}
+
+/* Form */
+.form-container {
+    display: flex;
+    flex-direction: row;
+    color: var(--blue);
+    margin: 0 auto;
+    justify-content: space-between;
+    text-align: center;
+    max-width: 500px;
+    font-size: 15px;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-element label {
+    margin: 10px auto;
+    width: 100%;
+    text-align: start;
+}
+
+.form-element input {
+    font-size: 15px;
+    padding: 5px;
+    background-color: transparent;
+    border: 2px solid var(--light);
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+
+.form-element input:hover {
+    box-shadow: 0px 0px 4px 1px var(--light);
+}
+
+.form-element input::placeholder {
+    color: var(--gray);
+}
+
+.form-element input:focus {
+    background-color: var(--gray);
+    color: var(--light);
+    border-radius: 0 !important;
+    outline: 0;
+}
+
+.form-element input:focus::placeholder {
+    color: var(--light);
+    opacity: 0.2;
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        width: 80%;
+        flex-direction: column;
+    }
+}
