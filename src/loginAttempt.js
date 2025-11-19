@@ -11,6 +11,6 @@ export class LoginAttempt {
         this.success = success;
     };
     toString() {
-        return `${this.username}, ${this,time}, ${this.success}`;
+        return `${this.username}, ${this.time}, ${this.success}`;
     };
 };
