@@ -12,15 +12,37 @@ const init = function () {
 
   const loginAttemptsContainer = document.getElementById("loginAttempts");
   console.log(attempts)
-  displayLoginAttempts(attempts, loginAttemptsContainer);
+
+  const button = document.getElementById("formButton");
+  button.addEventListener("click", () => {
+    console.log("Bejelentkezés elindult, gomb megnyomva");
+    let success = false;
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+
+    if (username.value == "admin" && password.value == "admin") {
+      success = true;
+      attempts.push(new LoginAttempt(username.value, new Date(), success));
+      displayLoginAttempts(attempts, loginAttemptsContainer);
+      username.value = "";
+      password.value = "";
+    } else {
+      alert("The username or password is incorrect");
+      attempts.push(new LoginAttempt(username.value, new Date(), success));
+    };
+  });
 };
+
+
+
 
 const displayLoginAttempts = function (attempts, loginAttemptsContainer) {
   console.log("displayLoginAttemts függvény meghívódott")
+  loginAttemptsContainer.textContent = "";
   for (let i = 0; i < attempts.length; i++) {
     console.log(`Ciklus lefutott ${i}szer`)
     console.log(attempts[i]);
-    
+
     const loginAttemptElement = document.createElement("p")
     loginAttemptElement.textContent = attempts[i];
     loginAttemptsContainer.appendChild(loginAttemptElement);

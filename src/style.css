@@ -56,6 +56,7 @@ hr {
     border: 2px solid var(--light);
     transition: all 0.3s ease;
     border-radius: 0;
+    color: var(--light);
 }
 
 .form-element input:hover {
@@ -76,6 +77,22 @@ hr {
 .form-element input:focus::placeholder {
     color: var(--light);
     opacity: 0.2;
+}
+
+.form-button {
+    display: flex;
+    background-color: transparent;
+    color: var(--light);
+    border: 2px solid var(--light);
+    width: fit-content;
+    margin: 20px auto;
+    padding: 8px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: var(--gray);
 }
 
 @media (max-width: 480px) {
