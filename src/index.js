@@ -19,6 +19,7 @@ const init = function () {
     let success = false;
     const username = document.getElementById("username");
     const password = document.getElementById("password");
+    const formContainer = document.querySelector(".form-container");
 
     if (username.value == "admin" && password.value == "admin") {
       success = true;
@@ -26,6 +27,9 @@ const init = function () {
       displayLoginAttempts(attempts, loginAttemptsContainer);
       username.value = "";
       password.value = "";
+      formContainer.style.display = "none";
+      button.style.display = "none";
+
     } else {
       alert("The username or password is incorrect");
       attempts.push(new LoginAttempt(username.value, new Date(), success));
